@@ -1,4 +1,5 @@
 vendor
 .env
-.log
+*.log
 .idea
+docker/blog/mysql
