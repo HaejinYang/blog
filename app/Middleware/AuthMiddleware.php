@@ -1,5 +1,8 @@
 <?php
+
 namespace App\Middleware;
+
+use App\Service\Logger;
 use \Thumbsupcat\IcedAmericano\Routing\Middleware;
 
 class AuthMiddleware extends Middleware

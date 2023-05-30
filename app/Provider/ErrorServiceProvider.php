@@ -2,6 +2,7 @@
 
 namespace App\Provider;
 
+use App\Service\Logger;
 use Thumbsupcat\IcedAmericano\Support\ServiceProvider;
 
 class ErrorServiceProvider extends ServiceProvider
@@ -13,7 +14,7 @@ class ErrorServiceProvider extends ServiceProvider
         });
 
         set_exception_handler(function ($e) {
-            error_log("[" . date('y-m-d H:i:s') . "]" . $e . PHP_EOL, 3, dirname(__DIR__, 2) . '/storage/logs/logs.log');
+            Logger::log($e->__toString());
         });
     }
 
