@@ -1,9 +1,11 @@
 <?php
+
 namespace App\Provider;
+
 use Thumbsupcat\IcedAmericano\Support\ServiceProvider;
 use Thumbsupcat\IcedAmericano\Session\DatabaseSessionHandler;
 
-class SessionServiceProvider extends ServiceProvider
+class SessionServiceProvider implements ServiceProvider
 {
     public static function register()
     {

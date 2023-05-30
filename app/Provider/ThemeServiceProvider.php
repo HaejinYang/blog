@@ -5,7 +5,7 @@ namespace App\Provider;
 use Thumbsupcat\IcedAmericano\Support\ServiceProvider;
 use Thumbsupcat\IcedAmericano\Support\Theme;
 
-class ThemeServiceProvider extends ServiceProvider
+class ThemeServiceProvider implements ServiceProvider
 {
     public static function register()
     {

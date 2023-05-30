@@ -5,7 +5,7 @@ namespace App\Provider;
 use Thumbsupcat\IcedAmericano\Support\ServiceProvider;
 use Thumbsupcat\IcedAmericano\Routing\Route;
 
-class RouteServiceProvider extends ServiceProvider
+class RouteServiceProvider implements ServiceProvider
 {
     public static function register()
     {
