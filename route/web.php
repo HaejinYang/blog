@@ -19,7 +19,7 @@ Route::add('post', '/user', '\App\Controller\UserController::store', [RequireMid
 
 // post
 Route::add('get', '/post/write', '\App\Controller\PostController::create', [AuthMiddleware::class]);
-Route::add('post', '/post/', '\App\Controller\PostController::store', [AuthMiddleware::class, RequireMiddleware::class, CsrfTokenMiddleware::class]);
+Route::add('post', '/post', '\App\Controller\PostController::store', [AuthMiddleware::class, RequireMiddleware::class, CsrfTokenMiddleware::class]);
 Route::add('get', '/post/{id}', '\App\Controller\PostController::show');
 Route::add('get', '/post/{id}/edit', '\App\Controller\PostController::edit', [AuthMiddleware::class, PostMiddleware::class]);
 Route::add('patch', '/post/{id}', '\App\Controller\PostController::update', [AuthMiddleware::class, RequireMiddleware::class, CsrfTokenMiddleware::class, PostMiddleware::class]);

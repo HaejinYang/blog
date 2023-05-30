@@ -28,7 +28,7 @@ class Post
 
     public function create()
     {
-        return Adaptor::exec("INSET INTO post(`user_id`, `title`, `content`) VALUES(?, ?, ?)",
+        return Adaptor::exec("INSERT INTO post(`user_id`, `title`, `content`) VALUES(?, ?, ?)",
             [$this->user_id, $this->title, $this->content]
         );
     }
