@@ -5,7 +5,7 @@ namespace App\Provider;
 use Thumbsupcat\IcedAmericano\Support\ServiceProvider;
 use Thumbsupcat\IcedAmericano\Database\Adaptor;
 
-class DatabaseServiceProvider extends ServiceProvider
+class DatabaseServiceProvider implements ServiceProvider
 {
     public static function register()
     {

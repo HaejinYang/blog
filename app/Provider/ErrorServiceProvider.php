@@ -5,7 +5,7 @@ namespace App\Provider;
 use App\Service\Logger;
 use Thumbsupcat\IcedAmericano\Support\ServiceProvider;
 
-class ErrorServiceProvider extends ServiceProvider
+class ErrorServiceProvider implements ServiceProvider
 {
     public static function register()
     {

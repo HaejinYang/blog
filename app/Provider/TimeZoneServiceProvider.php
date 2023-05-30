@@ -4,7 +4,7 @@ namespace App\Provider;
 
 use Thumbsupcat\IcedAmericano\Support\ServiceProvider;
 
-class TimeZoneServiceProvider extends ServiceProvider
+class TimeZoneServiceProvider implements ServiceProvider
 {
     public static function register()
     {
