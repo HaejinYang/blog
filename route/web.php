@@ -14,4 +14,4 @@ Route::add('post', '/auth/logout', '\App\Controller\AuthController::logout');
 
 // user
 Route::add('get', '/user/register', '\App\Controller\UserController::create');
-Route::add('post', '/user/', '\App\Controller\UserController::store', [RequireMiddleware::class, CsrfTokenMiddleware::class]);
+Route::add('post', '/user', '\App\Controller\UserController::store', [RequireMiddleware::class, CsrfTokenMiddleware::class]);

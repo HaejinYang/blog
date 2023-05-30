@@ -11,7 +11,7 @@ class UserController
     public static function create()
     {
         Theme::view('auth', [
-            'request_url' => 'user'
+            'request_url' => '/user'
         ]);
     }
 

@@ -7,9 +7,9 @@ use Thumbsupcat\IcedAmericano\Database\Adaptor;
 
 class AuthService
 {
-    public static function login($email, $password): array|null
+    public static function login($email, $password): null|User
     {
-        if (!$user = current(Adaptor::getAll("SELECT * FROM WHERE `email` = ?", [$email]), User::class)) {
+        if (!$user = current(Adaptor::getAll("SELECT * FROM user WHERE `email` = ?", [$email], User::class))) {
             return null;
         }
 
