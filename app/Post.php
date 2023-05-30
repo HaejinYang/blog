@@ -25,4 +25,37 @@ class Post
     {
         return filter_var(mb_substr(strip_tags($this->content), 0, 200), FILTER_SANITIZE_SPECIAL_CHARS);
     }
+
+    public function create()
+    {
+        return Adaptor::exec("INSET INTO post(`user_id`, `title`, `content`) VALUES(?, ?, ?)",
+            [$this->user_id, $this->title, $this->content]
+        );
+    }
+
+    public function update()
+    {
+        return Adaptor::exec("UPDATE post SET `title` = ?, `content` = ? WHERE `id` = ?",
+            [$this->title, $this->content, $this->id]
+        );
+    }
+
+    public function delete()
+    {
+        return Adaptor::exec("DELETE FROM post WHERE `id` = ?", [$this->id]);
+    }
+
+    public static function get($id)
+    {
+        return current(Adaptor::getAll("SELECT * FROM post WHERE id = ?", [$id], \App\Post::class));
+    }
+
+    public function isOwner()
+    {
+        if (!array_key_exists('user', $_SESSION)) {
+            return false;
+        }
+
+        return $this->user_id === $_SESSION['user']->id;
+    }
 }
