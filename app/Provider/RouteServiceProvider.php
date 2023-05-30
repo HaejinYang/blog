@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Provider;
+
 use Thumbsupcat\IcedAmericano\Support\ServiceProvider;
 use Thumbsupcat\IcedAmericano\Routing\Route;
 
@@ -7,7 +9,9 @@ class RouteServiceProvider extends ServiceProvider
 {
     public static function register()
     {
-        require_once dirname(__DIR__, 2) . '/route/web.php';
+        foreach (['web', 'app'] as $name) {
+            require_once dirname(__DIR__, 2) . "/route/{$name}.php";
+        }
     }
 
     public static function boot()
