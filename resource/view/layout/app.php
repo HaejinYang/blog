@@ -21,9 +21,9 @@ $_SESSION['CSRF_TOKEN'] = bin2hex(random_bytes(32));
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav">
                 <li><a href="/">Home</a></li>
-                <li><a href="/users/register">Register</a></li>
+                <li><a href="/user/register">Register</a></li>
                 <?php if (array_key_exists('user', $_SESSION)) : ?>
-                    <li><a href="/posts/write">Write</a></li>
+                    <li><a href="/post/write">Write</a></li>
                     <li><a href="#" id="logout">Sign out</a></li>
                 <?php else : ?>
                     <li><a href="/auth/login">Sign in</a></li>

@@ -7,20 +7,20 @@ use Thumbsupcat\IcedAmericano\Database\Adaptor;
 
 class AuthService
 {
-    public static function login($email, $function)
+    public static function login($email, $password): null|User
     {
-        if (!$user = current(Adaptor::getAll("SELECT * FROM WHERE `email` = ?", [$email]), User::class)) {
-            return;
+        if (!$user = current(Adaptor::getAll("SELECT * FROM user WHERE `email` = ?", [$email], User::class))) {
+            return null;
         }
 
         if (!\password_verify($password, $user->password)) {
-            return;
+            return null;
         }
 
-        $_SESSION['user'] = $user;
+        return $_SESSION['user'] = $user;
     }
 
-    public static function logout()
+    public static function logout(): bool
     {
         session_unset();
 
