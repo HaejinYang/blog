@@ -2,7 +2,7 @@
 
 namespace App\Provider;
 
-use App\Service\Logger;
+use App\Helper\Logger;
 use Thumbsupcat\IcedAmericano\Support\ServiceProvider;
 
 class ErrorServiceProvider implements ServiceProvider

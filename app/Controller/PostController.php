@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Post;
-use App\Service\Logger;
 use App\Service\PostService;
 use Thumbsupcat\IcedAmericano\Support\Theme;
 

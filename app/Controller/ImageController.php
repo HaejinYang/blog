@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Service\ImageService;
-use App\Service\Logger;
 
 class ImageController
 {

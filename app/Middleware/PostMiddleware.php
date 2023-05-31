@@ -3,7 +3,6 @@
 namespace App\Middleware;
 
 use App\Post;
-use App\Service\Logger;
 use Thumbsupcat\IcedAmericano\Routing\Middleware;
 
 class PostMiddleware extends Middleware
